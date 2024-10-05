@@ -5,7 +5,7 @@
   </a>
   </kbd>
 
-  <h1 align="center">Discord AIO -> Faded</h1>
+  <h1 align="center">Telegram Forwarding Program</h1>
   <p align="center">
 A telegram bot I use to post my signals from one group to another
     <br />
