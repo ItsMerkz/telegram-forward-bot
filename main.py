@@ -18,7 +18,7 @@ destination_channel = config['destination']  # Channel to send messages to (user
 # Logging setup
 logging.basicConfig(
     level=logging.WARNING,  # Set level to WARNING to filter out INFO and DEBUG logs
-    format='%(asctime)s - %(levelname)s - %(message)s',  # Simple log format
+    format='%(asctime)s - %(levelname)s - %(message)s', 
     datefmt='%Y-%m-%d %H:%M:%S'
 )
 logger = logging.getLogger(__name__)
@@ -28,17 +28,17 @@ client = TelegramClient('personal_forward_bot', api_id, api_hash)
 
 def is_within_time_range():
     """
-    Check if the current time (in UTC-1) is within the allowed operating hours:
-    - Monday to Friday: 9AM - 5PM
-    - Saturday and Sunday: 10AM - 6PM
+    Check if the current time (in UTC+1) (UK timezone)
+    - Monday to Friday: 9AM - 5PM - Schedule
+    - Saturday and Sunday: 10AM - 6PM - Schedule
     """
     # Get current time in UTC
     current_time = datetime.utcnow()
 
-    # Adjust to UTC-1 by subtracting 1 hour
+    # Adjust to UTC+1 by adding 1 hour
     utc_minus_1_time = current_time + timedelta(hours=1)
 
-    # Get the current day of the week (0 = Monday, 6 = Sunday)
+    # Get the current day of the week (0 = Monday, 6 = Sunday) - into simple array
     day_of_week = utc_minus_1_time.weekday()
 
     # Get current hour and minute
@@ -79,7 +79,7 @@ async def forward_message(event):
 
 # Start the client
 if __name__ == '__main__':
-    os.system("cls & title MemeX Signals")
+    os.system("cls & title Telegram Forward Bot")
 
     logging.getLogger('telethon').setLevel(logging.WARNING)
 
