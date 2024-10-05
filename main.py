@@ -63,14 +63,11 @@ async def forward_message(event):
         if is_within_time_range(): # If it's between the schedule posted by us!
             # Extract the message text
             message_text = event.message
+            
+            await client.send_message(destination_channel, message_text)
 
-            if 'NEW POOL' in message_text.message:
-                # Forward the message to the destination channel
-                await client.send_message(destination_channel, message_text)
-
-                logger.info(f"Message forwarded to {destination_channel}")
-            else:
-                logger.info("signal was not a new pool")
+            logger.info(f"Message forwarded to {destination_channel}")
+            
         else:
             pass
 
