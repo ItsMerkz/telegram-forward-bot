@@ -10,7 +10,7 @@
 A telegram bot I use to post my signals from one group to another
     <br />
     <br />
-    <a href="https://t.me/memexsignals">📜 ChangeLog</a>
+    <a href="https://t.me/merkz_vouches">📜 ChangeLog</a>
     ·
     <a href="https://github.com/ItsMerkz/telegram-forward-bot/issues">⚠️ Report Bug</a>
     ·
